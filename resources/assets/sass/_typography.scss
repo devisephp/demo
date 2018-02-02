@@ -9,4 +9,8 @@ h4 { @apply text-2xl }
 h5 { @apply text-xl font-normal }
 h6 { @apply text-lg }
 
-p { @apply text-blue-greyer font-light leading-normal; }
+p { @apply text-grey-dark font-light leading-normal; }
+
+.text-shadow {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, .6);
+}

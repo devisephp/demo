@@ -9,7 +9,7 @@
   &.headroom--pinned {
     @apply bg-transparent;
 
-    a { @apply text-blue-lighter }
+    a { @apply text-grey }
   }
   &.headroom--not-top {
     @apply bg-white;
