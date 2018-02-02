@@ -1,0 +1,52 @@
+[v-cloak] {
+  display: none;
+}
+
+.arrow-down {
+  @apply flex flex-col justify-center items-center;
+
+  .stem {
+    @apply bg-grey-dark;
+
+    width: 3px;
+    height: 100px;
+    margin: 0 auto;
+  }
+
+  i {
+    @apply align-top leading-none -mt-2 text-grey-dark;
+  }
+}
+
+.arrow-up {
+  @apply flex flex-col justify-start items-center;
+
+  .stem {
+    @apply bg-grey-dark;
+
+    width: 3px;
+    height: 100px;
+    margin: 0 auto;
+  }
+
+  i {
+    @apply align-top leading-none -mb-2 text-grey-dark;
+  }
+}
+
+.speech-bubble {
+  @apply relative bg-blue-dark text-white rounded-lg p-8 leading-normal;
+}
+
+.speech-bubble:after {
+  @apply absolute pin-b w-0 h-0;
+
+  content: '';
+	left: 50%;
+  border: 17px solid transparent;
+  border-top-color: #2b6ed8;
+  border-bottom: 0;
+  border-left: 0;
+	margin-left: -8.5px;
+	margin-bottom: -17px;
+}

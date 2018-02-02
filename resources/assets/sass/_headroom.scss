@@ -1,0 +1,19 @@
+/**
+ * Note: I have omitted any vendor-prefixes for clarity.
+ * Adding them is left as an exercise for the reader.
+ */
+.headroom {
+  transition: all 300ms linear;
+
+  &.headroom--top,
+  &.headroom--pinned {
+    @apply bg-transparent;
+
+    a { @apply text-blue-lighter }
+  }
+  &.headroom--not-top {
+    @apply bg-white;
+
+    a { @apply text-blue-dark }
+  }
+}

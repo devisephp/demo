@@ -1,0 +1,42 @@
+.btn {
+  @apply bg-blue-dark text-blue-lightest text-sm uppercase py-4 px-6 rounded no-underline;
+
+  transition: 0.5s all ease;
+
+  &:hover {
+    @apply bg-blue shadow-md no-underline;
+  }
+
+  &:disabled {
+    cursor:not-allowed;
+    opacity:0.75;
+  }
+
+  &.rounded-full {
+    @apply rounded-full;
+  }
+}
+
+.btn-inverse {
+  @apply bg-white text-blue-dark;
+
+  &:hover {
+    @apply text-white;
+  }
+}
+
+.btn-danger {
+  @apply bg-red-dark text-white;
+
+  &:hover {
+    @apply bg-red text-white;
+  }
+}
+
+.btn-sm {
+  @apply p-2 text-xs;
+}
+
+.btn-xs {
+  @apply py-1 px-2 text-xs;
+}
