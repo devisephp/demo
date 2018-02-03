@@ -10,12 +10,8 @@ import Features from '../components/Features'
 
 var routes = [
   {
-    path: '*',
-    name: 'index',
-    component: Vue.component('features', Features)
-  },
-  {
     path: '/',
+    alias: ['*'],
     name: 'index',
     component: Vue.component('features', Features)
   },

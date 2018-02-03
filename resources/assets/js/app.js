@@ -11,7 +11,7 @@ window.Vue = require('vue');
 
 import App from './components/App'
 import Hero from './components/Hero'
-import router from './router/route.config.js'
+// import router from './router/route.config.js'
 
 const hero = new Vue({
   el: '#hero',
@@ -19,9 +19,9 @@ const hero = new Vue({
   components: { Hero }
 })
 
-const experiences = new Vue({
-  el: '#experiences',
-  template: '<App/>',
-  components: { App },
-  router: router
-})
+// const experiences = new Vue({
+//   el: '#experiences',
+//   template: '<App/>',
+//   components: { App },
+//   // router: router
+// })

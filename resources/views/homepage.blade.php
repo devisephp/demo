@@ -8,9 +8,155 @@
 
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
 
-    <title>Welcome to Trade</title>
+    <title>Welcome to Devise Ocean Cruises</title>
+
+    <script>
+      var sitesObj = {
+        data: [
+          {
+            name: 'Devise Sea Cruises',
+            current: true,
+            languages: {
+              data: [
+                {
+                  id: 0,
+                  name: 'English',
+                  url: 'http://sea-cruise.devise.lbm.co',
+                  default: true
+                },
+                {
+                  id: 0,
+                  name: 'Espanol',
+                  url: 'http://sea-cruise.devise.lbm.co/es/'
+                }
+              ]
+            }
+          },
+          {
+            name: 'Devise River Cruises',
+            current: false,
+            languages: {
+              data: [
+                {
+                  id: 0,
+                  name: 'English',
+                  url: 'http://river-cruise.devise.lbm.co',
+                  default: true
+                },
+                {
+                  id: 0,
+                  name: 'Espanol',
+                  url: 'http://river-cruise.devise.lbm.co/es/'
+                }
+              ]
+            }
+          }
+        ]
+      }
+
+      var pageObj = {
+        meta: {
+          title: '',
+          description: '',
+          keywords: '',
+          canonical: '',
+          languages: [
+            {
+              id: 0,
+              name: 'English',
+              current: true,
+              url: ''
+            },
+            {
+              id: 1,
+              name: 'Espanol',
+              current: false,
+              url: ''
+            }
+          ],
+          versions: [
+            {
+              id: 0,
+              current: true,
+              name: '',
+              ab_testing_amount: 0,
+            }
+          ]
+        },
+        slices: {
+          data: [
+            {
+              name: 'Hero',
+              data: {
+                title: {
+                  type: 'wysiwyg',
+                  label: 'Title',
+                  text: '<strong>New</strong> England Route'
+                }
+              }
+            },
+            {
+              name: 'LeftSideWithCard',
+              data: {
+                header: {
+                  type: 'text',
+                  label: 'Header',
+                  text: 'Welcome to the greatest cruise line ever.',
+                  maxlength: 120
+                },
+                paragraph: {
+                  type: 'wysiwyg',
+                  label: 'Paragraph below the title',
+                  text: '<p>Devise Sea Cruises is a fantasy cruise line. No, really, it isn\'t real. This is just a demo site for the greatest CMS of all time: Devise. Take a look around and see how content management can be fast for users, easy on developers, and amazing for content managers. You can login by clicking the login button above.</p>'
+                },
+                image: {
+                  type: 'image',
+                  label: 'Image to the right of the title',
+                  url: '/imgs/placeholder-scenery-3.jpg',
+                  alt: 'A test image'
+                }
+              }
+            },
+          ]
+        }
+      }
+
+      // this should normally be written out by devise and this is for testing
+      // only.
+      window.page = JSON.stringify(pageObj)
+
+    </script>
+    <script>
+      window.deviseConfig = {
+        Hero: {
+          name: 'Hero',
+          template: '<div id="hero"></div>',
+          props: ['devise']
+        },
+        LeftSideWithCard: {
+          name: 'LeftSideWithCard',
+          template: `
+          <div class="p-8 md:p-12 lg:p-12 mt-10 sm:mt-0 bg-grey-lightest flex flex-col items-center">
+            <div class="max-w-container">
+              <div class="flex justify-between items-stretch flex-col sm:flex-row card shadow-lg rounded-lg bg-white">
+                <div class="w-full sm:w-3/5 mb-10 sm:mb-0 sm:mr-10 p-12">
+                  <h3 class="text-blue-dark mb-4 font-light">
+                    @{{ devise.header.text }}
+                  </h3>
+                  <div v-html="devise.paragraph.text"></div>
+                </div>
+                <div class="min-w-xs w-3/5 md:w-3/5 lg:w-3/5 xl:w-2/5 xxl:w-1/5 sm:ml-8 bg-cover rounded-r-lg" :style="{ backgroundImage: 'url(' + devise.image.url + ')'}"></div>
+              </div>
+            </div>
+          </div>
+          `,
+          props: ['devise']
+        }
+      }
+    </script>
   </head>
   <body>
+
     <div class="flex flex-col justify-center items-stretch w-full">
       <div class="fixed pin-l pin-r pin-t z-20" id="headroom">
         <ul class="flex list-reset font-normal uppercase text-sm justify-end p-8">
@@ -22,20 +168,8 @@
         </ul>
       </div>
 
-      <div id="hero"></div>
-
-      <div class="p-8 md:p-12 lg:p-12 mt-10 sm:mt-0 bg-grey-lightest flex flex-col items-center">
-        <div class="max-w-container">
-          <div class="flex justify-between items-stretch flex-col sm:flex-row card shadow-lg rounded-lg bg-white">
-            <div class="w-full sm:w-3/5 mb-10 sm:mb-0 sm:mr-10 p-12">
-              <h3 class="text-blue-dark mb-4 font-light">
-                Welcome to Devise Sea Cruises
-              </h3>
-              <p>Devise Sea Cruises is a fantasy cruise line. No, really, it isn't real. This is just a demo site for the greatest CMS of all time: Devise. Take a look around and see how content management can be fast for users, easy on developers, and amazing for content managers. You can login by clicking the login button above.</p>
-            </div>
-            <div class="min-w-xs w-3/5 md:w-3/5 lg:w-3/5 xl:w-2/5 xxl:w-1/5 sm:ml-8 bg-cover rounded-r-lg" style="background-image:url('/imgs/placeholder-scenery-3.jpg')"></div>
-          </div>
-        </div>
+      <div id="devise">
+        <div id="hero"></div>
       </div>
 
       <div class="p-8 md:p-12 lg:p-15 mt-10 sm:mt-0 flex flex-col items-center" id="experience">
@@ -108,10 +242,9 @@
         </div>
       </div>
 
-
-
     </div>
 
+    <script type="text/javascript" src="http://localhost:8080/app.js"></script>
     <script src="{{ mix('/js/app.js') }}"></script>
 
   </body>

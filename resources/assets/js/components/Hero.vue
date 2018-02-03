@@ -7,7 +7,7 @@
           <div class="relative p-12">
             <div class="bg-black opacity-50 absolute pin rounded-lg"></div>
             <div class="relative z-10 text-center">
-              <h1 class="text-white uppercase font-thin text-shadow mb-4"><strong class="font-light">New</strong> England Route</h1>
+              <h1 class="text-white uppercase font-thin text-shadow mb-4" v-html="devise.title.text"></h1>
               <div>
                 <h4 class="font-light uppercase text-white">New England Like You've Never Seen It</h4>
                 <p>Visit Boston, New York, and Maine in style</p>
@@ -44,7 +44,15 @@
 <script>
   export default {
     data () {
-      return {}
+      return {
+        devise: {}
+      }
+    },
+    mounted () {
+      let slice = window.devise.getSlice('Hero')
+      if (slice !== null) {
+        this.devise = slice.data
+      }
     }
   }
 </script>
