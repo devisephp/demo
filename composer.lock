@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a934fa2607c9f0f13d5fd815596de095",
+    "content-hash": "f12b1f9422ad9eaa9bc4795255d8882a",
     "packages": [
         {
             "name": "devisephp/cms",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/devisephp/cms.git",
-                "reference": "4164eb6aaff076ac7cd429e2d9747bfeacd875df"
+                "reference": "f89849d22f0f20301e32989ff0b514f1330a3e14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/devisephp/cms/zipball/4164eb6aaff076ac7cd429e2d9747bfeacd875df",
-                "reference": "4164eb6aaff076ac7cd429e2d9747bfeacd875df",
+                "url": "https://api.github.com/repos/devisephp/cms/zipball/f89849d22f0f20301e32989ff0b514f1330a3e14",
+                "reference": "f89849d22f0f20301e32989ff0b514f1330a3e14",
                 "shasum": ""
             },
             "require": {

@@ -9,7 +9,7 @@
         "fideloper/proxy": "~3.3",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
-        "devisephp/cms": "dev-unstable#4164eb6aaff076ac7cd429e2d9747bfeacd875df"
+        "devisephp/cms": "dev-unstable#f89849d22f0f20301e32989ff0b514f1330a3e14"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
