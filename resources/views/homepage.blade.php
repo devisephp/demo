@@ -239,7 +239,52 @@
                   }
                 ]
               }
-            }
+            },
+            {
+              name: 'AboutSlice',
+              data: {
+                title: {
+                  text: 'About Devise Sea Cruises'
+                }
+              },
+              slices: {
+                data: [
+                  {
+                    name: 'AboutInfoSlice',
+                    data: {
+                      title: {
+                        text: 'Deals for families and couples',
+                      },
+                      description: {
+                        text: 'Family and Getaway Packages provide value without a cost. Wait... what?'
+                      }
+                    }
+                  },
+                  {
+                    name: 'AboutInfoSlice',
+                    data: {
+                      title: {
+                        text: 'Deals for families and couples',
+                      },
+                      description: {
+                        text: 'Family and Getaway Packages provide value without a cost. Wait... what?'
+                      }
+                    }
+                  },
+                  {
+                    name: 'AboutInfoSlice',
+                    data: {
+                      title: {
+                        text: 'Deals for families and couples',
+                      },
+                      description: {
+                        text: 'Family and Getaway Packages provide value without a cost. Wait... what?'
+                      }
+                    }
+                  }
+                ]
+              }
+            },
           ]
         }
       }
@@ -305,6 +350,28 @@
           `,
           config: {
             title: {
+              type: 'wysiwyg',
+              label: 'title'
+            }
+          }
+        },
+        AboutSlice: {
+          name: 'AboutSlice',
+          template: `
+          <div class="p-8 md:p-12 lg:p-15 mt-10 sm:mt-0 w-full bg-grey-lightest flex flex-col items-center" id="about">
+            <div class="max-w-container text-left">
+              <h2 class="mb-8 text-blue-dark">About Devise Sea Cruises</h2>
+
+              <p class="w-4/5 text-blue-grey">Pork pig rump sausage ham kielbasa. Drumstick cow spare ribs pork, ham hock andouille porchetta pork loin frankfurter picanha pastrami turducken shank sausage. Flank ground round kielbasa, doner shank bresaola buffalo. Shank ground round bacon tail meatball burgdoggen flank shoulder. Doner prosciutto pastrami salami shoulder andouille. Shank kevin alcatra, bresaola meatball shankle ball tip burgdoggen. Cupim pork belly tri-tip pastrami prosciutto spare ribs tail t-bone hamburger.</p>
+
+              <div class="mt-10 flex flex-col md:flex-row">
+                <slice v-for="(s, key) in devise.slices.data" :key="key" :slice="s" class="md:pr-8 mb-8 w-full md:w-1/3"/>
+              </div>
+            </div>
+          </div>
+          `,
+          config: {
+            title: {
               type: 'text',
               label: 'Header',
               maxlength: 120
@@ -312,19 +379,30 @@
             paragraph: {
               type: 'wysiwyg',
               label: 'Paragraph below the title',
-            },
-            image: {
-              type: 'image',
-              label: 'Image to the right of the title',
             }
-          },
+          }
+        },
+        AboutInfoSlice: {
+          name: 'AboutInfoSlice',
+          template: `
+          <div>
+            <h5 class="text-blue-dark mb-4">Her Majesty</h5>
+            <p>Pancetta corned beef porchetta, picanha shoulder kevin cupim tri-tip drumstick shank turkey capicola bacon jerky. </p>
+          </div>
+          `,
           config: {
             title: {
+              type: 'text',
+              label: 'Header',
+              maxlength: 120
+            },
+            paragraph: {
               type: 'wysiwyg',
-              label: 'title'
+              label: 'Paragraph below the title',
             }
           }
         }
+
       }
     </script>
   </head>
@@ -343,29 +421,6 @@
 
       <div id="app">
         <devise></devise>
-      </div>
-
-      <div class="p-8 md:p-12 lg:p-15 mt-10 sm:mt-0 w-full bg-grey-lightest flex flex-col items-center" id="about">
-        <div class="max-w-container">
-          <h2 class="mb-8 text-blue-dark">About Devise Sea Cruises</h2>
-
-          <p class="w-4/5 text-blue-grey">Pork pig rump sausage ham kielbasa. Drumstick cow spare ribs pork, ham hock andouille porchetta pork loin frankfurter picanha pastrami turducken shank sausage. Flank ground round kielbasa, doner shank bresaola buffalo. Shank ground round bacon tail meatball burgdoggen flank shoulder. Doner prosciutto pastrami salami shoulder andouille. Shank kevin alcatra, bresaola meatball shankle ball tip burgdoggen. Cupim pork belly tri-tip pastrami prosciutto spare ribs tail t-bone hamburger.</p>
-
-          <div class="mt-10 flex flex-col md:flex-row">
-            <div class="md:pr-8 mb-8 w-full md:w-1/3">
-              <h5 class="text-blue-dark mb-4">Her Majesty</h5>
-              <p>Pancetta corned beef porchetta, picanha shoulder kevin cupim tri-tip drumstick shank turkey capicola bacon jerky. </p>
-            </div>
-            <div class="md:px-8 mb-8 w-full md:w-1/3">
-              <h5 class="text-blue-dark mb-4">Corina Laguna</h5>
-              <p>Filet mignon biltong landjaeger ball tip rump. Pork cow bacon ribeye capicola doner chicken sausage. Meatloaf sausage ham hock boudin rump. </p>
-            </div>
-            <div class="md:pl-8 mb-8 w-full md:w-1/3">
-              <h5 class="text-blue-dark mb-4">Devisifyisty</h5>
-              <p>Shankle fatback boudin pork belly jowl frankfurter flank porchetta buffalo pork turkey filet mignon salami. Chuck kevin filet mignon.</p>
-            </div>
-          </div>
-        </div>
       </div>
 
       <div class="p-8 md:p-12 lg:p-15 mt-10 sm:mt-0 w-full flex flex-col items-center" id="pricing">

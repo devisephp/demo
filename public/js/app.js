@@ -33783,8 +33783,11 @@ if (inBrowser && window.Vue) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Devise__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Devise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Devise__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Slice__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Slice___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__Slice__);
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+
 
 
 // import router from './router/router.config.js'
@@ -33805,6 +33808,8 @@ var DevisePlugin = {
   // It takes the global Vue object as well as user-defined options.
   install: function install(Vue, options) {
     Vue.component('Devise', __WEBPACK_IMPORTED_MODULE_1__Devise___default.a);
+    Vue.component('Slice', __WEBPACK_IMPORTED_MODULE_2__Slice___default.a);
+
     // We call Vue.mixin() here to inject functionality into all components.
     Vue.mixin({
       methods: {
@@ -45207,12 +45212,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    [
-      _c(_vm.currentView, {
-        tag: "component",
-        attrs: { devise: _vm.slice.data }
-      })
-    ],
+    [_c(_vm.currentView, { tag: "component", attrs: { devise: _vm.slice } })],
     1
   )
 }
@@ -45237,11 +45237,7 @@ var render = function() {
   return _c(
     "div",
     _vm._l(_vm.page.slices.data, function(slice, key) {
-      return _c(_vm.getComponent(slice), {
-        key: key,
-        tag: "component",
-        attrs: { devise: slice }
-      })
+      return _c("slice", { key: key, attrs: { slice: slice } })
     })
   )
 }
