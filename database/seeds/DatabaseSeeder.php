@@ -17,12 +17,14 @@ class DatabaseSeeder extends Seeder
     DB::table('dvs_sites')->truncate();
     DB::table('dvs_slices')->truncate();
     DB::table('dvs_slice_instances')->truncate();
+    DB::table('dvs_fields')->truncate();
 
     $this->call([
       LanguagesSeeder::class,
       PagesSeeder::class,
       SitesSeeder::class,
-      SlicesSeeder::class
+      SlicesSeeder::class,
+      FieldsSeeder::class
     ]);
   }
 }

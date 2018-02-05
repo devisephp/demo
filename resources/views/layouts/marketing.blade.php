@@ -10,10 +10,8 @@
 
     <title>Welcome to Trade</title>
     <script>
-      window.page = <?= json_encode($page) ?>;
-      window.devise = {
-          <?= Devise::getTemplates() ?>
-        };
+      <?= Devise::pageData($page) ?>
+      <?= Devise::components() ?>
     </script>
   </head>
   <body>
