@@ -11,17 +11,18 @@ window.Vue = require('vue');
 
 import App from './components/App'
 import Hero from './components/Hero'
-// import router from './router/route.config.js'
+import router from './router/route.config.js'
+import Devise from './devise-dev/main.js';
 
-const hero = new Vue({
-  el: '#hero',
-  template: '<Hero/>',
-  components: { Hero }
+Vue.use(Devise)
+
+Vue.component('Hero', Hero)
+Vue.component('Experiences', {
+  template: '<App :devise="devise"/>',
+  components: { App },
+  router: router
 })
 
-// const experiences = new Vue({
-//   el: '#experiences',
-//   template: '<App/>',
-//   components: { App },
-//   // router: router
-// })
+const app = new Vue({
+  el: '#app'
+})

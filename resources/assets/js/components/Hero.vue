@@ -43,16 +43,6 @@
 
 <script>
   export default {
-    data () {
-      return {
-        devise: {}
-      }
-    },
-    mounted () {
-      let slice = window.devise.getSlice('Hero')
-      if (slice !== null) {
-        this.devise = slice.data
-      }
-    }
+    name: 'HeroSlice'
   }
 </script>

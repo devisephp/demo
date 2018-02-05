@@ -86,11 +86,9 @@
         slices: {
           data: [
             {
-              name: 'Hero',
+              name: 'HeroSlice',
               data: {
                 title: {
-                  type: 'wysiwyg',
-                  label: 'Title',
                   text: '<strong>New</strong> England Route'
                 }
               }
@@ -99,24 +97,25 @@
               name: 'LeftSideWithCard',
               data: {
                 header: {
-                  type: 'text',
-                  label: 'Header',
                   text: 'Welcome to the greatest cruise line ever.',
-                  maxlength: 120
                 },
                 paragraph: {
-                  type: 'wysiwyg',
-                  label: 'Paragraph below the title',
                   text: '<p>Devise Sea Cruises is a fantasy cruise line. No, really, it isn\'t real. This is just a demo site for the greatest CMS of all time: Devise. Take a look around and see how content management can be fast for users, easy on developers, and amazing for content managers. You can login by clicking the login button above.</p>'
                 },
                 image: {
-                  type: 'image',
-                  label: 'Image to the right of the title',
                   url: '/imgs/placeholder-scenery-3.jpg',
                   alt: 'A test image'
                 }
               }
             },
+            {
+              name: 'ExperiencesSlice',
+              data: {
+                title: {
+                  text: 'Unparallelled Amenaties'
+                }
+              }
+            }
           ]
         }
       }
@@ -127,11 +126,16 @@
 
     </script>
     <script>
-      window.deviseConfig = {
-        Hero: {
-          name: 'Hero',
-          template: '<div id="hero"></div>',
-          props: ['devise']
+      window.deviseComponents = {
+        HeroSlice: {
+          name: 'HeroSlice',
+          template: '<hero></hero>',
+          config: {
+            title: {
+              type: 'wysiwyg',
+              label: 'title'
+            }
+          }
         },
         LeftSideWithCard: {
           name: 'LeftSideWithCard',
@@ -150,7 +154,52 @@
             </div>
           </div>
           `,
-          props: ['devise']
+          config: {
+            title: {
+              type: 'text',
+              label: 'Header',
+              maxlength: 120
+            },
+            paragraph: {
+              type: 'wysiwyg',
+              label: 'Paragraph below the title',
+            },
+            image: {
+              type: 'image',
+              label: 'Image to the right of the title',
+            }
+          }
+        },
+        ExperiencesSlice: {
+          name: 'ExperiencesSlice',
+          template: `
+          <div class="p-8 md:p-12 lg:p-15 mt-10 sm:mt-0 flex flex-col items-center" id="experience">
+            <div class="max-w-container flex justify-between items-center flex-col sm:flex-row w-full">
+              <experiences></experiences>
+            </div>
+          </div>
+          `,
+          config: {
+            title: {
+              type: 'text',
+              label: 'Header',
+              maxlength: 120
+            },
+            paragraph: {
+              type: 'wysiwyg',
+              label: 'Paragraph below the title',
+            },
+            image: {
+              type: 'image',
+              label: 'Image to the right of the title',
+            }
+          },
+          config: {
+            title: {
+              type: 'wysiwyg',
+              label: 'title'
+            }
+          }
         }
       }
     </script>
@@ -168,14 +217,8 @@
         </ul>
       </div>
 
-      <div id="devise">
-        <div id="hero"></div>
-      </div>
-
-      <div class="p-8 md:p-12 lg:p-15 mt-10 sm:mt-0 flex flex-col items-center" id="experience">
-        <div class="max-w-container flex justify-between items-center flex-col sm:flex-row w-full">
-          <div id="experiences"></div>
-        </div>
+      <div id="app">
+        <devise></devise>
       </div>
 
       <div class="p-8 md:p-12 lg:p-15 mt-10 sm:mt-0 w-full bg-grey-lightest flex flex-col items-center" id="about">
