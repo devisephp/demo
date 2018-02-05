@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Feature from '../components/Feature'
-import Features from '../components/Features'
+import Experience from '../components/Experience'
+import Experiences from '../components/Experiences'
 
 /****************************************/
 /*    NEW STUFF                         */
@@ -10,19 +10,16 @@ import Features from '../components/Features'
 
 var routes = [
   {
-    path: '*',
-    name: 'index',
-    component: Vue.component('features', Features)
-  },
-  {
     path: '/',
+    alias: ['*'],
     name: 'index',
-    component: Vue.component('features', Features)
+    component: Vue.component('experiences', Experiences),
+    props: true
   },
   {
-    path: '/experience/:featurename',
-    name: 'feature',
-    component: Vue.component('feature', Feature),
+    path: '/experience/:experiencename',
+    name: 'experience',
+    component: Vue.component('experience', Experience),
     props: true,
     meta: {
       title: 'Devise Sea-Cruises FTW'
