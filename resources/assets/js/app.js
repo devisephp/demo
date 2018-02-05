@@ -17,7 +17,7 @@ import Devise from './devise-dev/main.js';
 Vue.use(Devise)
 
 Vue.component('Hero', Hero)
-Vue.component('Experiences', {
+Vue.component('ExperiencesApp', {
   template: '<App :devise="devise"/>',
   components: { App },
   router: router

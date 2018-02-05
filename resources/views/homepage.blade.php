@@ -114,6 +114,130 @@
                 title: {
                   text: 'Unparallelled Amenaties'
                 }
+              },
+              slices: {
+                data: [
+                  {
+                    name: 'Experience',
+                    data: {
+                      name: {
+                        text: 'Destinations',
+                      },
+                      title: {
+                        text: 'Away we go',
+                      },
+                      description: {
+                        text: 'We offer the most incredible destinations. You will never want to come home.'
+                      },
+                      longDescription: {
+                        text: 'Bacon ipsum dolor amet alcatra kielbasa salami brisket kevin, frankfurter picanha swine shank. Cow corned beef bacon spare ribs hamburger andouille tri-tip buffalo. Ribeye turducken kevin, biltong andouille jowl ham hock strip steak short ribs tri-tip fatback landjaeger. Kevin venison ham hock bresaola salami turkey.'
+                      },
+                      html: {
+                        text: `TODO`
+                      }
+                    }
+                  },
+                  {
+                    name: 'Experience',
+                    data: {
+                      name: {
+                        text: 'Shore Excursions',
+                      },
+                      title: {
+                        text: 'Welcome to the wild side',
+                      },
+                      description: {
+                        text: 'Devise Sea Cruises offer the most extreme excursions in the industry. You probably won\'t survive'
+                      },
+                      longDescription: {
+                        text: 'Bacon ipsum dolor amet alcatra kielbasa salami brisket kevin, frankfurter picanha swine shank. Cow corned beef bacon spare ribs hamburger andouille tri-tip buffalo. Ribeye turducken kevin, biltong andouille jowl ham hock strip steak short ribs tri-tip fatback landjaeger. Kevin venison ham hock bresaola salami turkey.'
+                      },
+                      html: {
+                        text: `TODO`
+                      }
+                    }
+                  },
+                  {
+                    name: 'Experience',
+                    data: {
+                      name: {
+                        text: 'Our Ships',
+                      },
+                      title: {
+                        text: 'Opulance. We has it.',
+                      },
+                      description: {
+                        text: 'Devise Sea Cruises offer the most extreme excursions in the industry. You probably won\'t survive'
+                      },
+                      longDescription: {
+                        text: 'Bacon ipsum dolor amet alcatra kielbasa salami brisket kevin, frankfurter picanha swine shank. Cow corned beef bacon spare ribs hamburger andouille tri-tip buffalo. Ribeye turducken kevin, biltong andouille jowl ham hock strip steak short ribs tri-tip fatback landjaeger. Kevin venison ham hock bresaola salami turkey.'
+                      },
+                      html: {
+                        text: `TODO`
+                      }
+                    }
+                  },
+                  {
+                    name: 'Experience',
+                    data: {
+                      name: {
+                        text: 'Things to Do',
+                      },
+                      title: {
+                        text: '"Boardum" isn\'t in our vocabulary',
+                      },
+                      description: {
+                        text: 'We offer a million things to do on every ship. Literally, a million.'
+                      },
+                      longDescription: {
+                        text: 'Bacon ipsum dolor amet alcatra kielbasa salami brisket kevin, frankfurter picanha swine shank. Cow corned beef bacon spare ribs hamburger andouille tri-tip buffalo. Ribeye turducken kevin, biltong andouille jowl ham hock strip steak short ribs tri-tip fatback landjaeger. Kevin venison ham hock bresaola salami turkey.'
+                      },
+                      html: {
+                        text: `TODO`
+                      }
+                    }
+                  },
+                  {
+                    name: 'Experience',
+                    data: {
+                      name: {
+                        text: 'Dining',
+                      },
+                      title: {
+                        text: 'Eat your way to paradise',
+                      },
+                      description: {
+                        text: 'Our executive chefs prepare fresh, organic, gluten-free meals daily.'
+                      },
+                      longDescription: {
+                        text: 'Bacon ipsum dolor amet alcatra kielbasa salami brisket kevin, frankfurter picanha swine shank. Cow corned beef bacon spare ribs hamburger andouille tri-tip buffalo. Ribeye turducken kevin, biltong andouille jowl ham hock strip steak short ribs tri-tip fatback landjaeger. Kevin venison ham hock bresaola salami turkey.'
+                      },
+                      html: {
+                        text: `TODO`
+                      }
+                    }
+                  },
+                  {
+                    name: 'Experience',
+                    data: {
+                      name: {
+                        text: 'Packages',
+                      },
+                      title: {
+                        text: 'Deals for families and couples',
+                      },
+                      description: {
+                        text: 'Family and Getaway Packages provide value without a cost. Wait... what?'
+                      },
+                      longDescription: {
+                        text: 'Bacon ipsum dolor amet alcatra kielbasa salami brisket kevin, frankfurter picanha swine shank. Cow corned beef bacon spare ribs hamburger andouille tri-tip buffalo. Ribeye turducken kevin, biltong andouille jowl ham hock strip steak short ribs tri-tip fatback landjaeger. Kevin venison ham hock bresaola salami turkey.'
+                      },
+                      html: {
+                        text: `TODO`
+                      }
+                    }
+                  }
+                ]
               }
             }
           ]
@@ -129,7 +253,7 @@
       window.deviseComponents = {
         HeroSlice: {
           name: 'HeroSlice',
-          template: '<hero></hero>',
+          template: '<hero :devise="devise"></hero>',
           config: {
             title: {
               type: 'wysiwyg',
@@ -145,11 +269,11 @@
               <div class="flex justify-between items-stretch flex-col sm:flex-row card shadow-lg rounded-lg bg-white">
                 <div class="w-full sm:w-3/5 mb-10 sm:mb-0 sm:mr-10 p-12">
                   <h3 class="text-blue-dark mb-4 font-light">
-                    @{{ devise.header.text }}
+                    @{{ devise.data.header.text }}
                   </h3>
-                  <div v-html="devise.paragraph.text"></div>
+                  <div v-html="devise.data.paragraph.text"></div>
                 </div>
-                <div class="min-w-xs w-3/5 md:w-3/5 lg:w-3/5 xl:w-2/5 xxl:w-1/5 sm:ml-8 bg-cover rounded-r-lg" :style="{ backgroundImage: 'url(' + devise.image.url + ')'}"></div>
+                <div class="min-w-xs w-3/5 md:w-3/5 lg:w-3/5 xl:w-2/5 xxl:w-1/5 sm:ml-8 bg-cover rounded-r-lg" :style="{ backgroundImage: 'url(' + devise.data.image.url + ')'}"></div>
               </div>
             </div>
           </div>
@@ -175,7 +299,7 @@
           template: `
           <div class="p-8 md:p-12 lg:p-15 mt-10 sm:mt-0 flex flex-col items-center" id="experience">
             <div class="max-w-container flex justify-between items-center flex-col sm:flex-row w-full">
-              <experiences></experiences>
+              <experiences-app :devise="devise"></experiences-app>
             </div>
           </div>
           `,
