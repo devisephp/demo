@@ -34157,8 +34157,6 @@ if (false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Devise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Devise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Slice__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Slice___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__Slice__);
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 
 
 
@@ -34166,18 +34164,7 @@ if (false) {
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.config.productionTip = false;
 
-/* eslint-disable no-new */
-// new Vue({
-//   el: '#devise',
-//   router: router,
-//   components: { Devise },
-//   template: '<Devise/>'
-// })
-
-// This is your plugin object. It can be exported to be used anywhere.
 var DevisePlugin = {
-  // The install method is all that needs to exist on the plugin object.
-  // It takes the global Vue object as well as user-defined options.
   install: function install(Vue, options) {
     Vue.component('Devise', __WEBPACK_IMPORTED_MODULE_1__Devise___default.a);
     Vue.component('Slice', __WEBPACK_IMPORTED_MODULE_2__Slice___default.a);
@@ -34185,18 +34172,26 @@ var DevisePlugin = {
     // We call Vue.mixin() here to inject functionality into all components.
     Vue.mixin({
       methods: {
-        getCollection: function getCollection(slices, name) {
-          return slices.filter(function (slice) {
-            return slice.name === name;
-          });
-        },
+        // The collectionData looks at the slices passed to it and extracts
+        // the data for easier access
         getCollectionData: function getCollectionData(slices, name) {
           var collection = this.getCollection(slices, name);
           return collection.map(function (record) {
             return record.data;
           });
+        },
+
+        // Returns only the slices that match the name passed
+        // Primarily this is a helper function for getCollectionData
+        getCollection: function getCollection(slices, name) {
+          return slices.filter(function (slice) {
+            return slice.name === name;
+          });
         }
       },
+      // This sets a prop to be accepted by all components in a custom Vue
+      // app that resides within Devise. Makes it a little easier to pass
+      // down any data to custom child components
       props: ['devise']
     });
   }
@@ -45040,7 +45035,7 @@ var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = null
+var __vue_scopeId__ = "data-v-eaf9ac96"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -45083,13 +45078,13 @@ var content = __webpack_require__(57);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(59)("49856598", content, false, {});
+var update = __webpack_require__(59)("ea14f5c6", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../node_modules/css-loader/index.js!../../devise2-demo/node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-eaf9ac96\",\"scoped\":false,\"hasInlineConfig\":true}!../../devise2-demo/node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Devise.vue", function() {
-     var newContent = require("!!../node_modules/css-loader/index.js!../../devise2-demo/node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-eaf9ac96\",\"scoped\":false,\"hasInlineConfig\":true}!../../devise2-demo/node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Devise.vue");
+   module.hot.accept("!!../node_modules/css-loader/index.js!../../devise2-demo/node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-eaf9ac96\",\"scoped\":true,\"hasInlineConfig\":true}!../node_modules/sass-loader/lib/loader.js!../../devise2-demo/node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Devise.vue", function() {
+     var newContent = require("!!../node_modules/css-loader/index.js!../../devise2-demo/node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-eaf9ac96\",\"scoped\":true,\"hasInlineConfig\":true}!../node_modules/sass-loader/lib/loader.js!../../devise2-demo/node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Devise.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -45100,101 +45095,12 @@ if(false) {
 
 /***/ }),
 /* 57 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(58)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n#app {\n  font-family: 'Avenir', Helvetica, Arial, sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  text-align: center;\n  color: #2c3e50;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 58 */
 /***/ (function(module, exports) {
 
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-module.exports = function(useSourceMap) {
-	var list = [];
-
-	// return the list of modules as css string
-	list.toString = function toString() {
-		return this.map(function (item) {
-			var content = cssWithMappingToString(item, useSourceMap);
-			if(item[2]) {
-				return "@media " + item[2] + "{" + content + "}";
-			} else {
-				return content;
-			}
-		}).join("");
-	};
-
-	// import a list of modules into the list
-	list.i = function(modules, mediaQuery) {
-		if(typeof modules === "string")
-			modules = [[null, modules, ""]];
-		var alreadyImportedModules = {};
-		for(var i = 0; i < this.length; i++) {
-			var id = this[i][0];
-			if(typeof id === "number")
-				alreadyImportedModules[id] = true;
-		}
-		for(i = 0; i < modules.length; i++) {
-			var item = modules[i];
-			// skip already imported module
-			// this implementation is not 100% perfect for weird media query combinations
-			//  when a module is imported multiple times with different media queries.
-			//  I hope this will never occur (Hey this way we have smaller bundles)
-			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-				if(mediaQuery && !item[2]) {
-					item[2] = mediaQuery;
-				} else if(mediaQuery) {
-					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-				}
-				list.push(item);
-			}
-		}
-	};
-	return list;
-};
-
-function cssWithMappingToString(item, useSourceMap) {
-	var content = item[1] || '';
-	var cssMapping = item[3];
-	if (!cssMapping) {
-		return content;
-	}
-
-	if (useSourceMap && typeof btoa === 'function') {
-		var sourceMapping = toComment(cssMapping);
-		var sourceURLs = cssMapping.sources.map(function (source) {
-			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
-		});
-
-		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-	}
-
-	return [content].join('\n');
-}
-
-// Adapted from convert-source-map (MIT)
-function toComment(sourceMap) {
-	// eslint-disable-next-line no-undef
-	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
-
-	return '/*# ' + data + ' */';
-}
-
+throw new Error("Module build failed: CssSyntaxError: /Users/garywilliams/Code/vue-devise/src/Devise.vue:38:3: `@apply` cannot be used with `.tracking-superwide` because `.tracking-superwide` either cannot be found, or it's actual definition includes a pseudo-selector like :hover, :active, etc. If you're sure that `.tracking-superwide` exists, make sure that any `@import` statements are being properly processed *before* Tailwind CSS sees your CSS, as `@apply` can only be used for classes in the same CSS tree.\n    at Input.error (/Users/garywilliams/Code/devise2-demo/node_modules/postcss/lib/input.js:113:22)\n    at AtRule.error (/Users/garywilliams/Code/devise2-demo/node_modules/postcss/lib/node.js:116:38)\n    at message (/Users/garywilliams/Code/devise2-demo/node_modules/tailwindcss/lib/lib/substituteClassApplyAtRules.js:26:26)\n    at findMixin (/Users/garywilliams/Code/devise2-demo/node_modules/tailwindcss/lib/lib/substituteClassApplyAtRules.js:80:5)\n    at decls.reject.flatMap.mixin (/Users/garywilliams/Code/devise2-demo/node_modules/tailwindcss/lib/lib/substituteClassApplyAtRules.js:25:18)\n    at arrayMap (/Users/garywilliams/Code/devise2-demo/node_modules/lodash/lodash.js:660:23)\n    at map (/Users/garywilliams/Code/devise2-demo/node_modules/lodash/lodash.js:9571:14)\n    at Function.flatMap (/Users/garywilliams/Code/devise2-demo/node_modules/lodash/lodash.js:9274:26)\n    at /Users/garywilliams/Code/devise2-demo/node_modules/lodash/lodash.js:4379:28\n    at arrayReduce (/Users/garywilliams/Code/devise2-demo/node_modules/lodash/lodash.js:704:21)\n    at baseWrapperValue (/Users/garywilliams/Code/devise2-demo/node_modules/lodash/lodash.js:4378:14)\n    at LodashWrapper.wrapperValue (/Users/garywilliams/Code/devise2-demo/node_modules/lodash/lodash.js:9067:14)\n    at rule.walkAtRules.atRule (/Users/garywilliams/Code/devise2-demo/node_modules/tailwindcss/lib/lib/substituteClassApplyAtRules.js:28:12)\n    at /Users/garywilliams/Code/devise2-demo/node_modules/postcss/lib/container.js:304:28\n    at /Users/garywilliams/Code/devise2-demo/node_modules/postcss/lib/container.js:144:26\n    at Rule.each (/Users/garywilliams/Code/devise2-demo/node_modules/postcss/lib/container.js:110:22)\n    at Rule.walk (/Users/garywilliams/Code/devise2-demo/node_modules/postcss/lib/container.js:143:21)\n    at Rule.walkAtRules (/Users/garywilliams/Code/devise2-demo/node_modules/postcss/lib/container.js:302:25)\n    at css.walkRules.rule (/Users/garywilliams/Code/devise2-demo/node_modules/tailwindcss/lib/lib/substituteClassApplyAtRules.js:10:12)\n    at /Users/garywilliams/Code/devise2-demo/node_modules/postcss/lib/container.js:237:28\n    at /Users/garywilliams/Code/devise2-demo/node_modules/postcss/lib/container.js:144:26\n    at Root.each (/Users/garywilliams/Code/devise2-demo/node_modules/postcss/lib/container.js:110:22)\n    at Root.walk (/Users/garywilliams/Code/devise2-demo/node_modules/postcss/lib/container.js:143:21)\n    at Root.walkRules (/Users/garywilliams/Code/devise2-demo/node_modules/postcss/lib/container.js:235:25)\n    at /Users/garywilliams/Code/devise2-demo/node_modules/tailwindcss/lib/lib/substituteClassApplyAtRules.js:9:9\n    at LazyResult.run (/Users/garywilliams/Code/devise2-demo/node_modules/postcss/lib/lazy-result.js:277:20)\n    at LazyResult.asyncTick (/Users/garywilliams/Code/devise2-demo/node_modules/postcss/lib/lazy-result.js:192:32)\n    at LazyResult.asyncTick (/Users/garywilliams/Code/devise2-demo/node_modules/postcss/lib/lazy-result.js:204:22)\n    at LazyResult.asyncTick (/Users/garywilliams/Code/devise2-demo/node_modules/postcss/lib/lazy-result.js:204:22)\n    at LazyResult.asyncTick (/Users/garywilliams/Code/devise2-demo/node_modules/postcss/lib/lazy-result.js:204:22)\n    at LazyResult.asyncTick (/Users/garywilliams/Code/devise2-demo/node_modules/postcss/lib/lazy-result.js:204:22)\n    at LazyResult.asyncTick (/Users/garywilliams/Code/devise2-demo/node_modules/postcss/lib/lazy-result.js:204:22)\n    at LazyResult.asyncTick (/Users/garywilliams/Code/devise2-demo/node_modules/postcss/lib/lazy-result.js:204:22)\n    at LazyResult.asyncTick (/Users/garywilliams/Code/devise2-demo/node_modules/postcss/lib/lazy-result.js:204:22)\n    at processing.Promise.then._this2.processed (/Users/garywilliams/Code/devise2-demo/node_modules/postcss/lib/lazy-result.js:231:20)\n    at LazyResult.async (/Users/garywilliams/Code/devise2-demo/node_modules/postcss/lib/lazy-result.js:228:27)");
 
 /***/ }),
+/* 58 */,
 /* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -45461,14 +45367,24 @@ module.exports = function listToStyles (parentId, list) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Slice__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Slice___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Slice__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_admin_User__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_admin_User___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_admin_User__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Slice__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Slice___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Slice__);
 //
 //
 //
 //
 //
 //
+//
+//
+//
+//
+//
+//
+
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -45499,7 +45415,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }
   },
   components: {
-    'slice': __WEBPACK_IMPORTED_MODULE_0__Slice___default.a
+    Slice: __WEBPACK_IMPORTED_MODULE_1__Slice___default.a,
+    User: __WEBPACK_IMPORTED_MODULE_0__components_admin_User___default.a
   }
 });
 
@@ -45559,12 +45476,22 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    _vm._l(_vm.page.slices, function(slice, key) {
-      return _c("slice", { key: key, attrs: { slice: slice } })
-    })
-  )
+  return _c("div", { attrs: { id: "devise-container" } }, [
+    _c(
+      "div",
+      { attrs: { id: "devise-admin" } },
+      [_c("user"), _vm._v(" "), _c("h2", [_vm._v("Hello")])],
+      1
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      { attrs: { id: "devise-content" } },
+      _vm._l(_vm.page.slices, function(slice, key) {
+        return _c("slice", { key: key, attrs: { slice: slice } })
+      })
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -45581,6 +45508,104 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(71)
+/* template */
+var __vue_template__ = __webpack_require__(72)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "vue-devise/src/components/admin/User.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-423a6945", Component.options)
+  } else {
+    hotAPI.reload("data-v-423a6945", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 71 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'DeviseUser',
+  data: function data() {
+    return {};
+  }
+});
+
+/***/ }),
+/* 72 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [_c("h2", [_vm._v("User")])])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-423a6945", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
