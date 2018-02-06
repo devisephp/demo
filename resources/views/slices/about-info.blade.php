@@ -8,7 +8,6 @@
 @section('component')
   <script>
     let module = {
-      name: 'AboutInfoSlice',
       config: {
         title: {
           type: 'text',

@@ -4,7 +4,6 @@
 @section('component')
   <script>
     let module = {
-      name: 'ExperienceSlice',
       config: {
         name: {
           type: 'text',

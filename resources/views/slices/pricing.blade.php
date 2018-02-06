@@ -52,7 +52,6 @@
 @section('component')
   <script>
     let module = {
-      name: 'Pricing',
       config: {
         title: {
           type: 'text',

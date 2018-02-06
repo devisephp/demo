@@ -5,11 +5,15 @@
 @section('component')
   <script>
     let module = {
-      name: 'HeroSlice',
       config: {
         title: {
           type: 'wysiwyg',
           label: 'title'
+        }
+      },
+      methods: {
+        awesome: function() {
+
         }
       }
     }

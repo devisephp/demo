@@ -15,7 +15,6 @@
 @section('component')
   <script>
     let module = {
-      name: 'AboutSlice',
       config: {
         title: {
           type: 'text',
