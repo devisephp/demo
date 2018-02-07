@@ -10,6 +10,7 @@
 
     <title>Welcome to Trade</title>
     <script>
+      <?= Devise::sites() ?>
       <?= Devise::pageData($page) ?>
       <?= Devise::components() ?>
     </script>

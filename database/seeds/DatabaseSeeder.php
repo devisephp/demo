@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
     DB::table('dvs_page_versions')->truncate();
     DB::table('dvs_pages')->truncate();
     DB::table('dvs_sites')->truncate();
+    DB::table('dvs_site_element')->truncate();
     DB::table('dvs_slices')->truncate();
     DB::table('dvs_slice_instances')->truncate();
     DB::table('dvs_fields')->truncate();
