@@ -17,7 +17,6 @@
 @section('component')
   <script>
     let module = {
-      name: 'LeftSideWithCard',
       config: {
         title: {
           type: 'text',

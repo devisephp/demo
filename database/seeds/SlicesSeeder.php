@@ -25,7 +25,7 @@ class SlicesSeeder extends Seeder
       ],
       [
         'id'         => 3,
-        'name'       => 'LeftSideWithCard',
+        'name'       => 'Left Side With Card',
         'view'       => 'slices.left-side-with-card',
         'created_at' => date('Y-m-d H:i:s'),
         'updated_at' => date('Y-m-d H:i:s'),

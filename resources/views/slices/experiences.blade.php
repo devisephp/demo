@@ -9,7 +9,6 @@
 @section('component')
   <script>
     let module = {
-      name: 'ExperiencesSlice',
       config: {
         title: {
           type: 'wysiwyg',
