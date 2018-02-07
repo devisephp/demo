@@ -13,8 +13,14 @@ var tailwindcss = require('tailwindcss');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-    .sass('resources/assets/sass/app.scss', 'public/css')
+    // When building out demo
+    // .sass('resources/assets/sass/app.scss', 'public/css')
+    // .options({
+    //   processCssUrls: false,
+    //   postCss: [ tailwindcss('./tailwind.js') ],
+    // });
+    // When working on Devise
     .options({
       processCssUrls: false,
-      postCss: [ tailwindcss('./tailwind.js') ],
+      postCss: [ tailwindcss('./resources/assets/js/devise-dev/tailwind/tailwind.js') ],
     });
