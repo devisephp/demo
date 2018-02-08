@@ -25,15 +25,6 @@ if (token) {
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
 
-// Headroom - Navigation helper for when a user scrolls down
-import Headroom from 'headroom.js'
-// grab an element
-var navigationEl = document.getElementById("headroom");
-// construct an instance of Headroom, passing the element
-var navigation = new Headroom(navigationEl);
-// initialise
-navigation.init();
-
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting

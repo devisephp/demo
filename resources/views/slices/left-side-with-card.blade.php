@@ -18,7 +18,7 @@
   <script>
     let module = {
       config: {
-        title: {
+        header: {
           type: 'text',
           label: 'Header',
           maxlength: 120

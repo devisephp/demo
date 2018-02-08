@@ -8,10 +8,15 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+// Headroom - Navigation helper for when a user scrolls down
+import Headroom from 'headroom.js'
 
 import App from './components/App'
 import Hero from './components/Hero'
 import Devise from './devise-dev/main.js';
+import { EventBus } from './event-bus.js';
+
+window.bus = EventBus
 
 import router from './router/route.config.js'
 import store from './vuex/store'
@@ -21,6 +26,7 @@ sync(store, router)
 
 Vue.use(Devise, {
   store: store,
+  bus: window.bus,
   options: {
     adminClass: ''
   }
