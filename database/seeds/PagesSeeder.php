@@ -26,7 +26,6 @@ class PagesSeeder extends Seeder
         'created_by_user_id' => 1,
         'template_id'        => 1,
         'name'               => 'Default',
-        'view'               => 'layouts.marketing',
         'starts_at'          => date('Y-m-d H:i:s', strtotime('now -1 hour')),
         'created_at'         => date('Y-m-d H:i:s'),
         'updated_at'         => date('Y-m-d H:i:s'),
