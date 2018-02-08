@@ -74,6 +74,10 @@
           type: 'textarea',
           label: 'Offer 1 Description',
         },
+        offer1link: {
+          type: 'link',
+          label: 'Offer 1 Link',
+        },
         offer2background: {
           type: 'color',
           label: 'Offer 2 Color',
@@ -89,6 +93,10 @@
         offer2description: {
           type: 'textarea',
           label: 'Offer 2 Description',
+        },
+        offer2link: {
+          type: 'link',
+          label: 'Offer 2 Link',
         }
       }
     }
