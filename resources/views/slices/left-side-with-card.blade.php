@@ -8,7 +8,8 @@
           </h3>
           <div v-html="devise.fields.paragraph.text"></div>
         </div>
-        <div class="min-w-xs w-3/5 md:w-3/5 lg:w-3/5 xl:w-2/5 xxl:w-1/5 sm:ml-8 bg-cover rounded-r-lg" :style="{ backgroundImage: 'url(' + devise.fields.image.url + ')'}"></div>
+        <div class="min-w-xs w-3/5 md:w-3/5 lg:w-3/5 xl:w-2/5 xxl:w-1/5 sm:ml-8 bg-cover rounded-r-lg holderjs" :style="{ backgroundImage: 'url(?holder.js/200x200?theme=social)'}"></div>
+        {{-- <div class="holderjs" data-background-src="?holder.js/300x200"></div> --}}
       </div>
     </div>
   </div>
