@@ -3,7 +3,7 @@
     <div class="max-w-container text-left">
       <h2 class="mb-8 text-blue-dark">About Devise Sea Cruises</h2>
 
-      <p class="w-4/5 text-blue-grey">@{{ devise.fields.paragraph.text }}</p>
+      <div class="w-4/5 text-blue-grey" v-html="devise.fields.paragraph.text"></div>
 
       <div class="mt-10 flex flex-col md:flex-row">
         <slice v-for="(s, key) in devise.slices" :key="key" :slice="s" class="md:pr-8 mb-8 w-full md:w-1/3"/>
