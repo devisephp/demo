@@ -22,6 +22,8 @@ import router from './router/route.config.js'
 import store from './vuex/store'
 import { sync } from 'vuex-router-sync'
 
+import holderjs from 'holderjs'
+
 sync(store, router)
 
 Vue.use(Devise, {
