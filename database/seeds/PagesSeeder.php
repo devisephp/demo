@@ -23,7 +23,6 @@ class PagesSeeder extends Seeder
     DB::table('dvs_page_versions')->insert([
       array(
         'page_id'            => 1,
-        'created_by_user_id' => 1,
         'template_id'        => 1,
         'name'               => 'Default',
         'starts_at'          => date('Y-m-d H:i:s', strtotime('now -1 hour')),
