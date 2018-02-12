@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col md:flex-row items-center relative">
+  <div class="flex flex-col md:flex-row items-center relative" v-if="experience">
     <div class="absolute pin-t pin-l cursor-pointer uppercase text-blue-dark text-xs flex items-center" @click="goToIndex()">
       <i class="ion-ios-arrow-back text-base mr-1"></i>
       Back
