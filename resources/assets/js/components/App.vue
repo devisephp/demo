@@ -1,7 +1,7 @@
 <template>
   <div v-cloak class="w-full">
     <transition name="slide" mode="out-in">
-      <router-view :key="key" :dvs="devise"></router-view>
+      <router-view :key="key" :dvs="devise" name="experiences"></router-view>
     </transition>
   </div>
 </template>

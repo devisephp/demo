@@ -22,12 +22,11 @@ import router from './router/route.config.js'
 import store from './vuex/store'
 import { sync } from 'vuex-router-sync'
 
-import holderjs from 'holderjs'
-
 sync(store, router)
 
 Vue.use(Devise, {
   store: store,
+  router: router,
   bus: window.bus,
   options: {
     adminClass: ''
@@ -37,10 +36,14 @@ Vue.use(Devise, {
 Vue.component('Hero', Hero)
 Vue.component('ExperiencesApp', {
   template: '<App :devise="devise"/>',
-  components: { App },
-  router: router
+  components: { App }
+})
+
+window.bus.$on('devise-loaded', function () {
+  console.log('hereaerarweasdfadf')
 })
 
 const app = new Vue({
-  el: '#app'
+  el: '#app',
+  router: router
 })

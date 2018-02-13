@@ -4,26 +4,30 @@ import VueRouter from 'vue-router'
 import Experience from '../components/Experience'
 import Experiences from '../components/Experiences'
 
-/****************************************/
-/*    NEW STUFF                         */
-/****************************************/
-
 var routes = [
   {
     path: '/',
-    alias: ['*'],
+    alias: ['/devise/edit-page'],
     name: 'index',
-    component: Vue.component('experiences', Experiences),
-    props: true
+    props: true,
+    meta: {
+      inApp: 'in App alias'
+    },
+    components: {
+      'experiences': Experiences
+    },
   },
   {
     path: '/experience/:experiencename',
     name: 'experience',
-    component: Vue.component('experience', Experience),
     props: true,
     meta: {
-      title: 'Devise Sea-Cruises FTW'
-    }
+      title: 'Devise Sea-Cruises FTW',
+      inApp: 'in App'
+    },
+    components: {
+      'experiences': Experience
+    },
   }
 ]
 

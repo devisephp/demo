@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/css/app.css">
 
     <title>Welcome to Devise Cruises</title>
+
     <script>
       <?= Devise::data($page) ?>
     </script>
