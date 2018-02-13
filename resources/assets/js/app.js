@@ -39,8 +39,11 @@ Vue.component('ExperiencesApp', {
   components: { App }
 })
 
+// When we want to initialize something after Devise is done loading
 window.bus.$on('devise-loaded', function () {
-  console.log('hereaerarweasdfadf')
+  var navigation = document.querySelector("#headroom")
+  var headroom  = new Headroom(navigation)
+  headroom.init()
 })
 
 const app = new Vue({

@@ -5,15 +5,26 @@
 .headroom {
   transition: all 300ms linear;
 
+  a {
+    transition: all 300ms ease-in;
+  }
+
+  &.headroom--not-top {
+    @apply bg-white;
+
+    a {
+      @apply text-blue-dark;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    }
+  }
+
   &.headroom--top,
   &.headroom--pinned {
     @apply bg-transparent;
 
-    a { @apply text-grey }
-  }
-  &.headroom--not-top {
-    @apply bg-white;
-
-    a { @apply text-blue-dark }
+    a {
+      @apply text-white;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    }
   }
 }
