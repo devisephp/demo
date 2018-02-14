@@ -20,6 +20,9 @@ class DatabaseSeeder extends Seeder
     DB::table('dvs_slices')->truncate();
     DB::table('dvs_slice_instances')->truncate();
     DB::table('dvs_fields')->truncate();
+    DB::table('group_user')->truncate();
+    DB::table('groups')->truncate();
+    DB::table('users')->truncate();
 
     $this->call([
       LanguagesSeeder::class,
@@ -27,7 +30,8 @@ class DatabaseSeeder extends Seeder
       TemplatesSeeder::class,
       SitesSeeder::class,
       SlicesSeeder::class,
-      FieldsSeeder::class
+      FieldsSeeder::class,
+      UserGroupSeeder::class
     ]);
   }
 }
