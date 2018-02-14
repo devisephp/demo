@@ -12,7 +12,8 @@
     {{-- Turn the following on for production / working on Vue Devise --}}
     <link rel="stylesheet" href="/css/app.css">
 
-    <title>Welcome to Trade</title>
+    <title>Welcome to Devise Cruises</title>
+
     <script>
       <?= Devise::data($page) ?>
     </script>

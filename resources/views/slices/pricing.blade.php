@@ -27,6 +27,9 @@
               <sub class="text-sm align-baseline inline-block -ml-3">/ person</sub>
             </div>
             <p class="text-white">
+              <template v-if="devise.fields.offer2offer2description">
+              @{{ devise.fields.offer2offer2description.settings.numberOfWords }}
+            </template>
               @{{ devise.fields.offer2description.text }}
             </p>
           </div>

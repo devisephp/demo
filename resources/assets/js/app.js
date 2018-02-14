@@ -22,12 +22,11 @@ import router from './router/route.config.js'
 import store from './vuex/store'
 import { sync } from 'vuex-router-sync'
 
-import holderjs from 'holderjs'
-
 sync(store, router)
 
 Vue.use(Devise, {
   store: store,
+  router: router,
   bus: window.bus,
   options: {
     adminClass: ''
@@ -37,10 +36,17 @@ Vue.use(Devise, {
 Vue.component('Hero', Hero)
 Vue.component('ExperiencesApp', {
   template: '<App :devise="devise"/>',
-  components: { App },
-  router: router
+  components: { App }
+})
+
+// When we want to initialize something after Devise is done loading
+window.bus.$on('devise-loaded', function () {
+  var navigation = document.querySelector("#headroom")
+  var headroom  = new Headroom(navigation)
+  headroom.init()
 })
 
 const app = new Vue({
-  el: '#app'
+  el: '#app',
+  router: router
 })
