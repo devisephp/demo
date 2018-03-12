@@ -11,12 +11,15 @@ class DatabaseSeeder extends Seeder
    */
   public function run()
   {
+    DB::table('menu_items')->truncate();
+
     DB::table('dvs_languages')->truncate();
     DB::table('dvs_page_versions')->truncate();
     DB::table('dvs_pages')->truncate();
     DB::table('dvs_sites')->truncate();
     DB::table('dvs_site_element')->truncate();
     DB::table('dvs_templates')->truncate();
+    DB::table('dvs_template_slice')->truncate();
     DB::table('dvs_slices')->truncate();
     DB::table('dvs_slice_instances')->truncate();
     DB::table('dvs_fields')->truncate();
@@ -25,6 +28,7 @@ class DatabaseSeeder extends Seeder
     DB::table('users')->truncate();
 
     $this->call([
+      MenusSeeder::class,
       LanguagesSeeder::class,
       PagesSeeder::class,
       TemplatesSeeder::class,
