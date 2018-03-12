@@ -1,7 +1,7 @@
 @section('template')
   <div class="mb-8 mr-4">
-    <h5 class="text-blue-dark mb-4">@{{ devise.fields.title.text }}</h5>
-    <div class="text-grey-dark leading-normal" v-html="devise.fields.description.text"></div>
+    <h5 class="text-blue-dark mb-4">@{{ devise.title.text }}</h5>
+    <div class="text-grey-dark leading-normal" v-html="devise.description.text"></div>
   </div>
 @endsection
 

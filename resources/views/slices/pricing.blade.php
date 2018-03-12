@@ -1,36 +1,36 @@
 @section('template')
   <div class="p-8 md:p-12 lg:p-15 mt-10 sm:mt-0 w-full flex flex-col items-center" id="pricing">
     <div class="max-w-container">
-      <h2 class="mb-12 text-blue-dark font-light text-center">@{{ devise.fields.title.text }}</h2>
+      <h2 class="mb-12 text-blue-dark font-light text-center">@{{ devise.title.text }}</h2>
 
       <div class="flex flex-col md:flex-row justify-between align-stretch mb-8">
         <div class="w-full md:w-1/2 md:pr-4 flex">
-          <div class="rounded-sm bg-grey-lighter p-8 text-blue-dark w-full" :style="{'background-color': devise.fields.offer1background.color}">
-            <h4 class="mb-8 font-light text-center">@{{ devise.fields.offer1title.text }}</h4>
+          <div class="rounded-sm bg-grey-lighter p-8 text-blue-dark w-full" :style="{'background-color': devise.offer1background.color}">
+            <h4 class="mb-8 font-light text-center">@{{ devise.offer1title.text }}</h4>
             <div class="text-center text-5xl font-bold mb-8">
               <small class="text-xs align-top mt-4 -mr-3 inline-block">$</small>
-              @{{ devise.fields.offer1price.text }}
+              @{{ devise.offer1price.text }}
               <sub class="text-sm align-baseline inline-block -ml-3">/ person</sub>
             </div>
             <p>
-              @{{ devise.fields.offer1description.text }}
+              @{{ devise.offer1description.text }}
             </p>
           </div>
         </div>
 
         <div class="w-full md:w-1/2 md:pl-4 flex">
-          <div class="rounded-sm bg-blue-dark text-white p-8 w-full" :style="{'background-color': devise.fields.offer2background.color}">
-            <h4 class="mb-8 font-light text-center">@{{ devise.fields.offer2title.text }}</h4>
+          <div class="rounded-sm bg-blue-dark text-white p-8 w-full" :style="{'background-color': devise.offer2background.color}">
+            <h4 class="mb-8 font-light text-center">@{{ devise.offer2title.text }}</h4>
             <div class="text-center text-5xl font-bold mb-8">
               <small class="text-xs align-top mt-4 -mr-3 inline-block">$</small>
-              @{{ devise.fields.offer2price.text }}
+              @{{ devise.offer2price.text }}
               <sub class="text-sm align-baseline inline-block -ml-3">/ person</sub>
             </div>
             <p class="text-white">
-              <template v-if="devise.fields.offer2offer2description">
-              @{{ devise.fields.offer2offer2description.settings.numberOfWords }}
+              <template v-if="devise.offer2offer2description">
+              @{{ devise.offer2offer2description.settings.numberOfWords }}
             </template>
-              @{{ devise.fields.offer2description.text }}
+              @{{ devise.offer2description.text }}
             </p>
           </div>
         </div>
@@ -38,13 +38,13 @@
 
       <div class="flex justify-between">
         <div class="w-full md:w-1/2 text-center">
-          <a :href="devise.fields.offer1link.href" :target="devise.fields.offer1link.target" class="btn">
-            @{{ devise.fields.offer1link.text }}
+          <a :href="devise.offer1link.href" :target="devise.offer1link.target" class="btn">
+            @{{ devise.offer1link.text }}
           </a>
         </div>
         <div class="w-1/2 text-center hidden md:block">
-          <a :href="devise.fields.offer2link.href" :target="devise.fields.offer2link.target" class="btn">
-            @{{ devise.fields.offer2link.text }}
+          <a :href="devise.offer2link.href" :target="devise.offer2link.target" class="btn">
+            @{{ devise.offer2link.text }}
           </a>
         </div>
       </div>
