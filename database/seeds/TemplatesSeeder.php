@@ -10,11 +10,12 @@ class TemplatesSeeder extends Seeder
   {
     DB::table('dvs_templates')->insert([
       [
-        'id'         => 1,
-        'name'       => 'Home Page',
-        'layout'     => 'layouts.marketing',
-        'created_at' => date('Y-m-d H:i:s'),
-        'updated_at' => date('Y-m-d H:i:s'),
+        'id'            => 1,
+        'name'          => 'Home Page',
+        'layout'        => 'layouts.marketing',
+        'model_queries' => '',
+        'created_at'    => date('Y-m-d H:i:s'),
+        'updated_at'    => date('Y-m-d H:i:s'),
       ]
     ]);
 
