@@ -4,11 +4,11 @@
       <div class="flex justify-between items-stretch flex-col sm:flex-row card shadow-lg rounded-lg bg-white">
         <div class="w-full sm:w-3/5 mb-10 sm:mb-0 sm:mr-10 p-12">
           <h3 class="text-blue-dark mb-4 font-light">
-            @{{ devise.fields.header.text }}
+            @{{ devise.header.text }}
           </h3>
-          <div class="text-grey-dark leading-normal" v-html="devise.fields.paragraph.text"></div>
+          <div class="text-grey-dark leading-normal" v-html="devise.paragraph.text"></div>
         </div>
-        <div class="min-w-xs w-3/5 md:w-3/5 lg:w-3/5 xl:w-2/5 xxl:w-1/5 sm:ml-8 bg-cover rounded-r-lg" :style="{ backgroundImage: 'url(' + devise.fields.image.url + ')'}"></div>
+        <div class="min-w-xs w-3/5 md:w-3/5 lg:w-3/5 xl:w-2/5 xxl:w-1/5 sm:ml-8 bg-cover rounded-r-lg" :style="{ backgroundImage: 'url(' + devise.image.url + ')'}"></div>
       </div>
     </div>
   </div>
