@@ -385,14 +385,14 @@ class FieldsSeeder extends Seeder
         'updated_at'        => date('Y-m-d H:i:s'),
       ],
       [
-        'slice_instance_id' => 14,
+        'slice_instance_id' => 15,
         'key'               => 'offer2description',
         'json_value'        => '{"text":"Someone is not coming home alive. Have you seen that movie 47 meters down? *Spoilers* Yeah, that one girl totally gets it from the shark.."}',
         'created_at'        => date('Y-m-d H:i:s'),
         'updated_at'        => date('Y-m-d H:i:s'),
       ],
       [
-        'slice_instance_id' => 14,
+        'slice_instance_id' => 15,
         'key'               => 'offer2link',
         'json_value'        => '{"text":"I\'m so in","href":"http://laravel-news.com","target":"_self"}',
         'created_at'        => date('Y-m-d H:i:s'),

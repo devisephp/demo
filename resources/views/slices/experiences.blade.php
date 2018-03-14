@@ -10,6 +10,7 @@
   <script>
     let module = {
       config: {
+        hasChildSlot: true,
         title: {
           type: 'wysiwyg',
           label: 'title'
