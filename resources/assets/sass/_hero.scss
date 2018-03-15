@@ -1,27 +1,3 @@
-.speech-bubble-up {
-  @apply relative bg-white text-blue-dark rounded-lg p-4 leading-normal;
-}
-
-.speech-bubble-up:after {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 50%;
-	width: 0;
-	height: 0;
-	border: 20px solid transparent;
-	border-bottom-color: #fff;
-	border-top: 0;
-	margin-left: -20px;
-	margin-top: -20px;
-}
-
 .hero-grad {
   background: linear-gradient(-90deg, #2b6ed8, #4e81d1, #2b6ed8);
-}
-
-#hero {
-  h1 {
-    font-size:100px;
-  }
 }

@@ -1,8 +1,8 @@
 @section('template')
-  <div class="p-8 md:p-12 lg:p-12 mt-10 sm:mt-0 bg-grey-lightest flex flex-col items-center">
+  <div class="md:p-12 lg:p-12 mt-10 sm:mt-0 bg-grey-lightest flex flex-col items-center">
     <div class="max-w-container">
-      <div class="flex justify-between items-stretch flex-col sm:flex-row card shadow-lg rounded-lg bg-white">
-        <div class="w-full sm:w-3/5 mb-10 sm:mb-0 sm:mr-10 p-12">
+      <div class="flex justify-between items-stretch flex-col sm:flex-row card md:shadow-lg md:rounded-lg bg-white">
+        <div class="w-full sm:w-3/5 mb-10 sm:mb-0 sm:mr-10 md:p-12 p-8">
           <h3 class="text-blue-dark mb-4 font-light">
             @{{ devise.header.text }}
           </h3>

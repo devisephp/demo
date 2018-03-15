@@ -3,6 +3,12 @@
  * Adding them is left as an exercise for the reader.
  */
 .headroom {
+  @apply block;
+
+  @media (min-width: 768px) {
+    @apply fixed;
+  }
+
   transition: all 300ms linear;
 
   a {
@@ -10,7 +16,7 @@
   }
 
   &.headroom--not-top {
-    @apply bg-white;
+    @apply bg-white fixed;
 
     a {
       @apply text-blue-dark;
@@ -24,6 +30,13 @@
     a {
       @apply text-white;
       text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    }
+
+    .mobile-nav {
+      a {
+        @apply text-blue-dark;
+        text-shadow: none;
+      }
     }
   }
 }
