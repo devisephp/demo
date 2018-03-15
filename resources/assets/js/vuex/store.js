@@ -8,7 +8,11 @@ Vue.use(Vuex)
 
 // root state object.
 // each Vuex instance is just a single state tree.
-const state = {}
+const state = {
+  menus: {
+    data: []
+  }
+}
 
 // A Vuex instance is created by combining the state, the actions,
 // and the mutations. Because the actions and mutations are just
