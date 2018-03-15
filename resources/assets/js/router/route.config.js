@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 
 import Experience from '../components/Experience'
 import Experiences from '../components/Experiences'
+import MenusIndex from '../components/devise-admin/menus/Index'
 
 var routes = [
   {
@@ -27,6 +28,18 @@ var routes = [
     },
     components: {
       'experiences': Experience
+    },
+  },
+  // Example of writing custom admin pages
+  {
+    path: '/devise/menus',
+    name: 'devise-menus',
+    components: {
+      'devise': MenusIndex
+    },
+    meta: {
+      title: 'Testing',
+      wide: true
     },
   }
 ]
