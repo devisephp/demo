@@ -20,3 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::resource('devise/menu-items', 'MenuItemsController', [
   'except' => ['create', 'edit']
 ]);
+
+Route::resource('devise/events', 'EventsController', [
+  'except' => ['create', 'edit']
+]);

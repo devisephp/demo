@@ -173,6 +173,34 @@ class TemplatesSeeder extends Seeder
         'created_at'  => date('Y-m-d H:i:s'),
         'updated_at'  => date('Y-m-d H:i:s'),
       ],
+      // Events List
+      [
+        'id'          => 12,
+        'template_id' => 1,
+        'parent_id'   => 0,
+        'slice_id'    => 10,
+        'type'        => 'single',
+        'label'       => 'Event list',
+        'position'    => 11,
+        'model_query' => '',
+        'config'      => '',
+        'created_at'  => date('Y-m-d H:i:s'),
+        'updated_at'  => date('Y-m-d H:i:s'),
+      ],
+      // Menu Items
+      [
+        'id'          => 13,
+        'template_id' => 1,
+        'parent_id'   => 12,
+        'slice_id'    => 11,
+        'type'        => 'model',
+        'label'       => 'Event Details',
+        'position'    => 12,
+        'model_query' => 'class=App%5CEvent&sort=-date',
+        'config'      => '',
+        'created_at'  => date('Y-m-d H:i:s'),
+        'updated_at'  => date('Y-m-d H:i:s'),
+      ],
     ]);
   }
 
