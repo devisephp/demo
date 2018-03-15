@@ -8,6 +8,9 @@
       <li class="dvs-cursor-pointer dvs-mb-6 dvs-text-lg" @click="goToPage('devise-pages-index')">
         Pages
       </li>
+      <li class="dvs-cursor-pointer dvs-mb-6 dvs-text-lg" @click="goToPage('devise-events-index')">
+        Events
+      </li>
       <li class="dvs-cursor-pointer dvs-mb-6 dvs-text-lg" @click="goToPage('devise-menus-index')">
         Menus
       </li>

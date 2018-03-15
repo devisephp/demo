@@ -6,6 +6,7 @@ import MainMenu from '../components/devise-admin/MainMenu'
 import Experience from '../components/Experience'
 import Experiences from '../components/Experiences'
 import MenusIndex from '../components/devise-admin/menus/Index'
+import EventsIndex from '../components/devise-admin/events/Index'
 
 var routes = [
   // You don't want to remove this. This is the Main administration menu for
@@ -47,6 +48,17 @@ var routes = [
     name: 'devise-menus-index',
     components: {
       'devise': MenusIndex
+    },
+    meta: {
+      title: 'Testing',
+      wide: true
+    },
+  },
+  {
+    path: '/devise/events',
+    name: 'devise-events-index',
+    components: {
+      'devise': EventsIndex
     },
     meta: {
       title: 'Testing',
