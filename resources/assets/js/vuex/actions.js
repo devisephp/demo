@@ -14,10 +14,10 @@ const actions = {
     })
   },
 
-  createMenu (context, menu) {
+  createEvent (context, event) {
     return new Promise((resolve, reject) => {
-      window.axios.post(context.state.devise.api.baseUrl + 'events/', menu).then(function (response) {
-        window.bus.$emit('showMessage', {title: 'Success!', message: menu.name + ' has been created.'})
+      window.axios.post(context.state.devise.api.baseUrl + 'events/', event).then(function (response) {
+        window.bus.$emit('showMessage', {title: 'Success!', message: event.name + ' has been created.'})
         context.commit('createEvent', response.data)
         resolve(response)
       }).catch(function (error) {
@@ -30,9 +30,9 @@ const actions = {
 
   updateEvent (context, payload) {
     return new Promise((resolve, reject) => {
-      window.axios.put(context.state.devise.api.baseUrl + 'events/' + payload.menu.id, payload.data).then(function (response) {
+      window.axios.put(context.state.devise.api.baseUrl + 'events/' + payload.event.id, payload.data).then(function (response) {
         window.bus.$emit('showMessage', {title: 'Success!', message: payload.data.name + ' has been saved.'})
-        context.commit('updateEvent', {menu: payload.menu, data: response.data})
+        context.commit('updateEvent', {menu: payload.event, data: response.data})
         resolve(response)
       }).catch(function (error) {
         window.bus.$emit('showError', error)

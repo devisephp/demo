@@ -33,12 +33,17 @@
 
         <fieldset class="dvs-fieldset mb-4">
           <label>Name</label>
-          <input type="text" v-model="newEvent.name" placeholder="Name of the Event item">
+          <input type="text" v-model="newEvent.name" placeholder="Name of the Event">
         </fieldset>
 
         <fieldset class="dvs-fieldset mb-4">
-          <label>Url</label>
-          <input type="text" v-model="newEvent.description" placeholder="URL of the Event Item">
+          <label>Description</label>
+          <textarea v-model="newEvent.description" placeholder="Description of the Event"></textarea>
+        </fieldset>
+
+        <fieldset class="dvs-fieldset mb-4">
+          <label>Date</label>
+          <input type="date" v-model="newEvent.date" placeholder="Date of the Event">
         </fieldset>
 
         <button class="dvs-btn" @click="requestCreateEvent" :disabled="createInvalid">Create</button>
@@ -52,12 +57,17 @@
 
         <fieldset class="dvs-fieldset mb-4">
           <label>Name</label>
-          <input type="text" v-model="editEvent.name" placeholder="Name of the Event Item">
+          <input type="text" v-model="editEvent.name" placeholder="Name of the Event">
         </fieldset>
 
         <fieldset class="dvs-fieldset mb-4">
-          <label>Url</label>
-          <input type="text" v-model="editEvent.description" placeholder="URL of the Event Item">
+          <label>Description</label>
+          <textarea v-model="editEvent.description" placeholder="Description of the Event"></textarea>
+        </fieldset>
+
+        <fieldset class="dvs-fieldset mb-4">
+          <label>Date</label>
+          <input type="datetime-local" v-model="editEvent.date" placeholder="Date of the Event">
         </fieldset>
 
         <button class="dvs-btn" @click="requestEditEvent" :disabled="editInvalid">Edit</button>
@@ -70,6 +80,7 @@
 
 <script>
 import DeviseModal from './../../../devise-dev/components/utilities/Modal'
+import moment from 'moment'
 
 import { mapActions, mapGetters } from 'vuex'
 
@@ -115,7 +126,7 @@ export default {
       this.editEvent.id = event.id
       this.editEvent.name = event.name
       this.editEvent.description = event.description
-      this.editEvent.description = event.date
+      this.editEvent.date = moment(event.date).format('YYYY-MM-DDTHH:mm:ss')
       this.showEdit = true
     },
     requestEditEvent ()  {
