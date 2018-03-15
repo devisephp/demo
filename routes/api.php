@@ -17,6 +17,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('menu-items', 'MenuItemsController', [
+Route::resource('devise/menu-items', 'MenuItemsController', [
   'except' => ['create', 'edit']
 ]);
