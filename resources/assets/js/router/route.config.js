@@ -1,11 +1,22 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+import MainMenu from '../components/devise-admin/MainMenu'
+
 import Experience from '../components/Experience'
 import Experiences from '../components/Experiences'
 import MenusIndex from '../components/devise-admin/menus/Index'
 
 var routes = [
+  // You don't want to remove this. This is the Main administration menu for
+  // Devise. This allows you to add new menu items to the primary navigation.
+  {
+    path: '/devise',
+    name: 'devise-index',
+    components: {
+      'devise': MainMenu
+    }
+  },
   {
     path: '/',
     alias: ['/devise/edit-page'],
@@ -33,7 +44,7 @@ var routes = [
   // Example of writing custom admin pages
   {
     path: '/devise/menus',
-    name: 'devise-menus',
+    name: 'devise-menus-index',
     components: {
       'devise': MenusIndex
     },
