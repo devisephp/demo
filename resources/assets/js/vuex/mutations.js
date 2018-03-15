@@ -2,7 +2,6 @@
 export default {
   // Events
   createEvent (state, event) {
-    console.log(event)
     state.events.data.push(event)
   },
 
@@ -20,7 +19,6 @@ export default {
 
   // Menus
   createMenu (state, menu) {
-    console.log(menu)
     state.menus.data.push(menu)
   },
 

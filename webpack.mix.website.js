@@ -8,4 +8,4 @@ mix
     processCssUrls: false,
     postCss: [ tailwindcss('./tailwind.js') ],
   })
-  .copy('node_modules/font-awesome/fonts', 'public/fonts');
+  .browserSync('devise2-demo.test/');

@@ -7,4 +7,5 @@ mix
   .options({
     processCssUrls: false,
     postCss: [ tailwindcss('./resources/assets/js/devise-dev/tailwind/tailwind.js') ],
-  });
+  })
+  .copy('node_modules/font-awesome/fonts', 'public/fonts');

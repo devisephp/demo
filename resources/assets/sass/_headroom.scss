@@ -18,8 +18,7 @@
     }
   }
 
-  &.headroom--top,
-  &.headroom--pinned {
+  &.headroom--top {
     @apply bg-transparent;
 
     a {
