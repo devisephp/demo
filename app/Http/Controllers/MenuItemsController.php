@@ -27,7 +27,13 @@ class MenuItemsController extends Controller
    */
   public function store(Request $request)
   {
-    return MenuItems::create($request->all());
+    $menuItem = new MenuItems;
+
+    $menuItem->fill($request->only($menuItem->fillable));
+
+    $menuItem->save();
+
+    return $menuItem;
   }
 
   /**
@@ -50,11 +56,11 @@ class MenuItemsController extends Controller
    */
   public function update(Request $request, $id)
   {
-    $menutItem = MenuItems::findOrFail($id);
+    $menuItem = MenuItems::findOrFail($id);
 
-    $menutItem->update($request->all());
+    $menuItem->update($request->only($menuItem->fillable));
 
-    return $menutItem;
+    return $menuItem;
   }
 
   /**

@@ -10,6 +10,8 @@ class MenuItems extends Model
 {
   use Filterable, Sortable;
 
+  public $fillable = ['name', 'url'];
+
   public $slice = [
     'name',
     'url'
