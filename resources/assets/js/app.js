@@ -21,6 +21,7 @@ import Hero from './components/Hero'
 import Devise from './devise-dev/main.js';
 import { EventBus } from './event-bus.js';
 
+
 window.bus = EventBus
 
 import router from './router/route.config.js'
