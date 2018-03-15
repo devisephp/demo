@@ -32,10 +32,16 @@ class Event extends Model
       "search" => 'name'
     ],
     [
-      "key"    => 'url',
-      "label"  => 'URL',
-      "sort"   => 'url',
-      "search" => 'url',
+      "key"    => 'description',
+      "label"  => 'Description',
+      "sort"   => 'description',
+      "search" => 'description'
+    ],
+    [
+      "key"    => 'date',
+      "label"  => 'Date',
+      "sort"   => 'date',
+      "search" => 'date',
       "show"   => false
     ]
   ];
