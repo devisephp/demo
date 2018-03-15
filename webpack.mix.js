@@ -12,16 +12,16 @@ var tailwindcss = require('tailwindcss');
  |
  */
 
-    mix.js('resources/assets/js/app.js', 'public/js')
     // When building out demo
-    // mix.sass('resources/assets/sass/app.scss', 'public/css')
-    // .options({
-    //   processCssUrls: false,
-    //   postCss: [ tailwindcss('./tailwind.js') ],
-    // })
-    // .copy('node_modules/font-awesome/fonts', 'public/fonts');
-    // When working on Devise
+    mix.sass('resources/assets/sass/app.scss', 'public/css')
     .options({
       processCssUrls: false,
-      postCss: [ tailwindcss('./resources/assets/js/devise-dev/tailwind/tailwind.js') ],
-    });
+      postCss: [ tailwindcss('./tailwind.js') ],
+    })
+    .copy('node_modules/font-awesome/fonts', 'public/fonts')
+    // When working on Devise
+    .js('resources/assets/js/app.js', 'public/js')
+    // .options({
+    //   processCssUrls: false,
+    //   postCss: [ tailwindcss('./resources/assets/js/devise-dev/tailwind/tailwind.js') ],
+    // });

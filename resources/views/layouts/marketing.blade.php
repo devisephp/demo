@@ -25,7 +25,7 @@
           {{-- This appears above the Devise content --}}
         </div>
         <footer slot="on-bottom">
-          Welcome to the footer!!!
+          {{-- This appears below the Devise content --}}
         </footer>
       </devise>
     </div>

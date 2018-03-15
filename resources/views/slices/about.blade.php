@@ -22,10 +22,6 @@
         paragraph: {
           type: 'wysiwyg',
           label: 'Paragraph below the title'
-        },
-        hideParagraph: {
-          type: 'checkbox',
-          label: 'Hide Paragraph'
         }
       }
     }

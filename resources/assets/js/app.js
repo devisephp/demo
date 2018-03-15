@@ -8,8 +8,13 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+
+// 3rd party libraries to showcase how you might utilize libs in and around Devise
 // Headroom - Navigation helper for when a user scrolls down
 import Headroom from 'headroom.js'
+// Carousel for the events section
+import VueCarousel from 'vue-carousel';
+Vue.use(VueCarousel);
 
 import App from './components/App'
 import Hero from './components/Hero'

@@ -201,6 +201,20 @@ class TemplatesSeeder extends Seeder
         'created_at'  => date('Y-m-d H:i:s'),
         'updated_at'  => date('Y-m-d H:i:s'),
       ],
+      // Footer
+      [
+        'id'          => 14,
+        'template_id' => 1,
+        'parent_id'   => 0,
+        'slice_id'    => 12,
+        'type'        => 'single',
+        'label'       => 'Footer',
+        'position'    => 13,
+        'model_query' => '',
+        'config'      => '',
+        'created_at'  => date('Y-m-d H:i:s'),
+        'updated_at'  => date('Y-m-d H:i:s'),
+      ],
     ]);
   }
 
