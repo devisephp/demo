@@ -13,8 +13,8 @@ class CreateMenuItems extends Migration {
     {
         Schema::create('menu_items', function(\Illuminate\Database\Schema\Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 255);
-            $table->string('url', 255);
+            $table->string('name', 255)->default('');
+            $table->string('url', 255)->default('');
             $table->timestamps();
         });
     }
