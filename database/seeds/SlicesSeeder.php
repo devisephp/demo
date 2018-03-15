@@ -72,6 +72,20 @@ class SlicesSeeder extends Seeder
         'created_at' => date('Y-m-d H:i:s'),
         'updated_at' => date('Y-m-d H:i:s'),
       ],
+      [
+        'id'         => 10,
+        'name'       => 'Events List',
+        'view'       => 'slices.events-list',
+        'created_at' => date('Y-m-d H:i:s'),
+        'updated_at' => date('Y-m-d H:i:s'),
+      ],
+      [
+        'id'         => 11,
+        'name'       => 'Event Details',
+        'view'       => 'slices.events-details',
+        'created_at' => date('Y-m-d H:i:s'),
+        'updated_at' => date('Y-m-d H:i:s'),
+      ],
     ]);
 
 
@@ -231,6 +245,17 @@ class SlicesSeeder extends Seeder
         'template_slice_id'  => 11,
         'enabled'            => 1,
         'position'           => 14,
+        'created_at'         => date('Y-m-d H:i:s'),
+        'updated_at'         => date('Y-m-d H:i:s'),
+      ],
+      // Events List
+      [
+        'id'                 => 16,
+        'page_version_id'    => 1,
+        'parent_instance_id' => 0,
+        'template_slice_id'  => 12,
+        'enabled'            => 1,
+        'position'           => 15,
         'created_at'         => date('Y-m-d H:i:s'),
         'updated_at'         => date('Y-m-d H:i:s'),
       ],
