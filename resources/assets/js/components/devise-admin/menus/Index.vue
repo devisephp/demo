@@ -112,6 +112,7 @@ export default {
     showEditMenu (menu)  {
       this.editMenu.id = menu.id
       this.editMenu.name = menu.name
+      this.editMenu.url = menu.url
       this.showEdit = true
     },
     requestEditMenu ()  {
@@ -119,6 +120,7 @@ export default {
       this.updateMenu({menu: this.originalMenu(this.editMenu.id), data: this.editMenu}).then(function () {
         self.editMenu.id = null
         self.editMenu.name = null
+        self.editMenu.url = null
         self.showEdit = false
       })
     },
@@ -148,7 +150,8 @@ export default {
              this.newMenu.url === null
     },
     editInvalid () {
-      return this.editMenu.name === null
+      return this.editMenu.name === null ||
+             this.editMenu.url === null
     }
   },
   components: {
