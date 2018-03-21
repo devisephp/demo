@@ -1,8 +1,24 @@
 
 export default {
+  // Events
+  createEvent (state, event) {
+    state.events.data.push(event)
+  },
+
+  setEvents (state, payload) {
+    state.events = payload
+  },
+
+  updateEvent (state, {event, data}) {
+    state.events.data.splice(state.events.data.indexOf(event), 1, data)
+  },
+
+  deleteEvent (state, event) {
+    state.events.data.splice(state.events.data.indexOf(event), 1)
+  },
+
   // Menus
   createMenu (state, menu) {
-    console.log(menu)
     state.menus.data.push(menu)
   },
 
