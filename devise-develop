@@ -1,0 +1,45 @@
+#!/bin/bash
+
+deviseWebpack="./webpack.mix.js.devise"
+appWebpack="./webpack.mix.js.app"
+mainWebpack="./webpack.mix.js"
+
+# Ask the user if they want to be in development mode
+
+echo "Would you like to turn on development mode? (Y/N)"
+read inDevelopMode
+
+# If the user says yes
+if [ "$inDevelopMode" = "Y" ] || [ "$inDevelopMode" = "y" ]
+then
+
+  # If the devise holding file is in place and the app holding file
+  # isn't in place then move forward.
+  if [ -s $deviseWebpack ] && [ ! -s $appWebpack ]
+  then
+    mv $mainWebpack $appWebpack
+    mv $deviseWebpack $mainWebpack
+    echo "Webpack files moved"
+  else
+    echo "It appears that you're already in Devise development mode. Either $deviseWebpack doesn't exist or $appWebpack does exist."
+  fi
+
+  echo "Devise Develop Mode turned On"
+
+# If the user says no (or anything else really)
+else
+
+  # If the app holding file is in place and the devise holding file
+  # isn't in place then move forward.
+  if [ -s $appWebpack ] && [ ! -s $deviseWebpack ]
+  then
+    mv $mainWebpack $deviseWebpack
+    mv $appWebpack $mainWebpack
+    echo "Webpack files moved"
+  else
+    echo "It appears that you're already out of Devise development mode. Either $appWebpack doesn't exist or $deviseWebpack does exist."
+  fi
+
+  echo "Devise Develop Mode turned Off"
+
+fi
