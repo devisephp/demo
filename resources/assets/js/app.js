@@ -3,7 +3,7 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 // Devise
-import Devise from './devise-dev/main.js';
+import Devise from './devise-dev/src/main.js';
 
 // Devise requires a bus, vue-router and vuex. We initialize these in your application
 // so that both apps can share the same store and router. All devise vuex

@@ -79,7 +79,7 @@
 </template>
 
 <script>
-import DeviseModal from './../../../devise-dev/components/utilities/Modal'
+import DeviseModal from './../../../devise-dev/src/components/utilities/Modal'
 import moment from 'moment'
 
 import { mapActions, mapGetters } from 'vuex'
