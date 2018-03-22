@@ -8,7 +8,7 @@
     "prefer-stable": true,
     "require": {
         "php": ">=7.0.0",
-        "devisephp/cms": "dev-v2-dev",
+        "devisephp/cms": "dev-v2-dev@1fe54c7",
         "fideloper/proxy": "~3.3",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0"

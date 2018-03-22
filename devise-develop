@@ -1,13 +1,33 @@
 #!/bin/bash
 
+# This script is written to assist the Devise team and any contributors to quickly
+# get up and running on this project and use it to develop Devise. To use it ensure
+# that you have the devise repo in a parallel folder and it is named 'devise' or
+# edit the configuration of deviseSrc variable below. 
+
 deviseWebpack="./webpack.mix.js.devise"
 appWebpack="./webpack.mix.js.app"
 mainWebpack="./webpack.mix.js"
+vendorDevise="./vendor/devisephp/cms"
+resourcesDevise="./resources/assets/devise-dev"
+deviseSrc="${PWD}/../devise"
+deviseVueSrc="./../devise/vue/src"
+
+#Colors
+BAD='\033[0;31m' # Red
+GOOD='\033[0;33m' # Orange
+FINISHED='\033[0;35m' # Purple
+NC='\033[0m' # No Color
+BOLD=$(tput bold)
+NORMAL=$(tput sgr0)
+
 
 # Ask the user if they want to be in development mode
 
-echo "Would you like to turn on development mode? (Y/N)"
+echo -e "Would you like to turn on development mode? (Y/N)\n"
 read inDevelopMode
+
+echo ""
 
 # If the user says yes
 if [ "$inDevelopMode" = "Y" ] || [ "$inDevelopMode" = "y" ]
@@ -19,12 +39,20 @@ then
   then
     mv $mainWebpack $appWebpack
     mv $deviseWebpack $mainWebpack
-    echo "Webpack files moved"
+    echo -e "${GOOD}Main Mix webpack config file (${mainWebpack}) set to create both Devise and website files.${NC}\n"
+
+    rm -rf $vendorDevise
+    ln -s $deviseSrc $vendorDevise
+    echo -e "${GOOD}${vendorDevise} files symlinked from ${deviseSrc}${NC}\n"
+
+    rm -rf $resourcesDevise
+    ln -s $deviseVueSrc $resourcesDevise
+    echo -e "${GOOD}Vue files located at '${resourcesDevise}' symlinked from '${deviseVueSrc}'${NC}\n"
   else
-    echo "It appears that you're already in Devise development mode. Either $deviseWebpack doesn't exist or $appWebpack does exist."
+    echo -e "${BAD}It appears that you're already in Devise development mode. Either ${deviseWebpack} doesn't exist or ${appWebpack} does exist.${NC}\n"
   fi
 
-  echo "Devise Develop Mode turned On"
+  echo -e "${BOLD}${FINISHED}Devise Develop Mode turned ${GOOD}On${NC}${NORMAL}\n"
 
 # If the user says no (or anything else really)
 else
@@ -35,11 +63,18 @@ else
   then
     mv $mainWebpack $deviseWebpack
     mv $appWebpack $mainWebpack
-    echo "Webpack files moved"
+    echo -e "${GOOD}Main Mix webpack config file (${mainWebpack}) set to create just the main application.${NC}\n"
+
+    rm $vendorDevise
+    composer install
+
+    rm $resourcesDevise
+    cp -R $deviseVueSrc $resourcesDevise
+    echo -e "${GOOD}Vue files located at '${resourcesDevise}' set back to normal install of Devise${NC}\n"
   else
-    echo "It appears that you're already out of Devise development mode. Either $appWebpack doesn't exist or $deviseWebpack does exist."
+    echo -e "${BAD}It appears that you're already out of Devise development mode. Either ${appWebpack} doesn't exist or ${deviseWebpack} does exist.${NC}\n"
   fi
 
-  echo "Devise Develop Mode turned Off"
+  echo -e "${BOLD}${FINISHED}Devise Develop Mode turned ${BAD}OFF${NC}${NORMAL}\n"
 
 fi
