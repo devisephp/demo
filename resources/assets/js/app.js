@@ -26,6 +26,7 @@ Vue.use(Devise, {
   }
 })
 
+
 // 3rd party libraries to showcase how you might utilize libs in and around Devise
 // Headroom - Navigation helper for when a user scrolls down
 import Headroom from 'headroom.js'
