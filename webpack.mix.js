@@ -12,10 +12,20 @@ var tailwindcss = require('tailwindcss');
  |
  */
 
-mix
-  // .js('resources/assets/js/app.js', 'public/js')
+ require('./vendor/devisephp/cms/mix/DeviseMix');
+
+ mix.webpackConfig({
+     output: {
+         publicPath: '/',
+         chunkFilename: 'js/[name].[chunkhash].js',
+     }
+ });
+
+ mix
   .sass('resources/assets/sass/app.scss', 'public/css')
   .options({
     processCssUrls: false,
     postCss: [ tailwindcss('./tailwind.js') ],
-  });
+  })
+  .deviseMix()
+  .js('resources/assets/js/app.js', 'public/js');
