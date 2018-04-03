@@ -15,11 +15,11 @@ require('./vendor/devisephp/cms/mix/DeviseMix');
  */
 
 
-// mix.webpackConfig({
-//     output: {
-//         chunkFilename: 'js/[name].[chunkhash].js',
-//     },
-// });
+mix.webpackConfig({
+    output: {
+        chunkFilename: 'js/[name].[chunkhash].js',
+    },
+});
 
 mix
   .sass('resources/assets/sass/app.scss', 'public/css')

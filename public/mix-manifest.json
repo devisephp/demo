@@ -1,12 +1,14 @@
 {
-    "/devise-pages.js": "/devise-pages.js",
-    "/devise-users.js": "/devise-users.js",
-    "/devise-slices.js": "/devise-slices.js",
-    "/devise-sites.js": "/devise-sites.js",
-    "/devise-settings.js": "/devise-settings.js",
-    "/devise-meta.js": "/devise-meta.js",
-    "/devise-languages.js": "/devise-languages.js",
-    "/devise-developers.js": "/devise-developers.js",
+    "/js/devise-pages.901b075fecffd0ceb944.js": "/js/devise-pages.901b075fecffd0ceb944.js",
+    "/js/devise-users.74d25adcf5c662b31d89.js": "/js/devise-users.74d25adcf5c662b31d89.js",
+    "/js/devise-slices.f8fcc978c0a6994260c5.js": "/js/devise-slices.f8fcc978c0a6994260c5.js",
+    "/js/devise-sites.7cd6f4d65c15e706bf7f.js": "/js/devise-sites.7cd6f4d65c15e706bf7f.js",
+    "/js/devise-settings.d27413800ffd0a183d23.js": "/js/devise-settings.d27413800ffd0a183d23.js",
+    "/js/devise-meta.f2095da42f56b3c31c35.js": "/js/devise-meta.f2095da42f56b3c31c35.js",
+    "/js/devise-languages.8f5e7c2c2fc306f2d86c.js": "/js/devise-languages.8f5e7c2c2fc306f2d86c.js",
+    "/js/devise-developers.57405c0084d3921701a3.js": "/js/devise-developers.57405c0084d3921701a3.js",
+    "/js/vendor.js": "/js/vendor.js",
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/manifest.js": "/manifest.js"
 }
