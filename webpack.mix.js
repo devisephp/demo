@@ -1,6 +1,8 @@
 let mix = require('laravel-mix');
 var tailwindcss = require('tailwindcss');
 
+require('./vendor/devisephp/cms/mix/DeviseMix');
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -12,16 +14,14 @@ var tailwindcss = require('tailwindcss');
  |
  */
 
- require('./vendor/devisephp/cms/mix/DeviseMix');
 
- mix.webpackConfig({
-     output: {
-         publicPath: '/',
-         chunkFilename: 'js/[name].[chunkhash].js',
-     }
- });
+// mix.webpackConfig({
+//     output: {
+//         chunkFilename: 'js/[name].[chunkhash].js',
+//     },
+// });
 
- mix
+mix
   .sass('resources/assets/sass/app.scss', 'public/css')
   .options({
     processCssUrls: false,

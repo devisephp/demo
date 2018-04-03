@@ -3,7 +3,7 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 // Devise
-import Devise from './devise-dev/src/main.js';
+import Devise from '../../../vendor/devisephp/cms/vue/src/main.js';
 
 // Devise requires a bus, vue-router and vuex. We initialize these in your application
 // so that both apps can share the same store and router. All devise vuex
@@ -25,7 +25,6 @@ Vue.use(Devise, {
     adminClass: ''
   }
 })
-
 
 // 3rd party libraries to showcase how you might utilize libs in and around Devise
 // Headroom - Navigation helper for when a user scrolls down

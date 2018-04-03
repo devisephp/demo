@@ -26,9 +26,7 @@
       </devise>
     </div>
 
-    <script src="{{mix('/js/manifest.js', '/devise')}}"></script>
-    <script src="{{mix('/js/vendor.js', '/devise')}}"></script>
-    <script src="{{mix('/js/app.js', '/devise')}}"></script>
+    <script src="{{mix('/js/app.js')}}"></script>
 
   </body>
 </html>

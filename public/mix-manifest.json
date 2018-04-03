@@ -1,4 +1,12 @@
 {
+    "/devise-pages.js": "/devise-pages.js",
+    "/devise-users.js": "/devise-users.js",
+    "/devise-slices.js": "/devise-slices.js",
+    "/devise-sites.js": "/devise-sites.js",
+    "/devise-settings.js": "/devise-settings.js",
+    "/devise-meta.js": "/devise-meta.js",
+    "/devise-languages.js": "/devise-languages.js",
+    "/devise-developers.js": "/devise-developers.js",
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css"
 }
